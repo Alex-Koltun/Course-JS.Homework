@@ -1,0 +1,44 @@
+{
+  "card1": {
+    "url":"img/leaf-3070153_640.jpg",
+    "text": "Beautiful mint and glass bowl",
+    "links": ["#beauty", "#glass", "#mint", "#green", "#white", "#health"],
+    "viewData": "1178",
+    "likes": "33"
+  },
+  "card2": {
+    "url":"img/leaf-3070153_640.jpg",
+    "text": "Beautiful mint and glass bowl",
+    "links": ["#beauty", "#glass", "#mint", "#green", "#white", "#health"],
+    "viewData": "1178",
+    "likes": "33"
+  },
+  "card3": {
+    "url":"img/rose-2417334_640.jpg",
+    "text": "Awesome rose with green leafs",
+    "links": ["#awesome", "#rose", "#green", "#red", "#fresh"],
+    "viewData": "1178",
+    "likes": "33"
+  },
+  "card4": {
+    "url":"img/rose-2417334_640.jpg",
+    "text": "Awesome rose with green leafs",
+    "links": ["#awesome", "#rose", "#green", "#red", "#fresh"],
+    "viewData": "1178",
+    "likes": "33"
+  },
+  "card5": {
+    "url":"img/leaf-3070153_640.jpg",
+    "text": "Beautiful mint and glass bowl",
+    "links": ["#beauty", "#glass", "#mint", "#green", "#white", "#health"],
+    "viewData": "1178",
+    "likes": "33"
+  },
+  "card6": {
+    "url":"img/leaf-3070153_640.jpg",
+    "text": "Beautiful mint and glass bowl",
+    "links": ["beauty", "glass", "mint", "green", "white", "health"],
+    "viewData": "1178",
+    "likes": "33"
+  }
+}
