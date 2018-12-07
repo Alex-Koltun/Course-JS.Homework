@@ -1,44 +1,12 @@
 {
-  "card1": {
-    "url":"img/leaf-3070153_640.jpg",
-    "text": "Beautiful mint and glass bowl",
-    "links": ["#beauty", "#glass", "#mint", "#green", "#white", "#health"],
-    "viewData": "1178",
-    "likes": "33"
-  },
-  "card2": {
-    "url":"img/leaf-3070153_640.jpg",
-    "text": "Beautiful mint and glass bowl",
-    "links": ["#beauty", "#glass", "#mint", "#green", "#white", "#health"],
-    "viewData": "1178",
-    "likes": "33"
-  },
-  "card3": {
-    "url":"img/rose-2417334_640.jpg",
-    "text": "Awesome rose with green leafs",
-    "links": ["#awesome", "#rose", "#green", "#red", "#fresh"],
-    "viewData": "1178",
-    "likes": "33"
-  },
-  "card4": {
-    "url":"img/rose-2417334_640.jpg",
-    "text": "Awesome rose with green leafs",
-    "links": ["#awesome", "#rose", "#green", "#red", "#fresh"],
-    "viewData": "1178",
-    "likes": "33"
-  },
-  "card5": {
-    "url":"img/leaf-3070153_640.jpg",
-    "text": "Beautiful mint and glass bowl",
-    "links": ["#beauty", "#glass", "#mint", "#green", "#white", "#health"],
-    "viewData": "1178",
-    "likes": "33"
-  },
-  "card6": {
-    "url":"img/leaf-3070153_640.jpg",
-    "text": "Beautiful mint and glass bowl",
-    "links": ["beauty", "glass", "mint", "green", "white", "health"],
-    "viewData": "1178",
-    "likes": "33"
-  }
+  "basicPrice": "20",
+  "categoryList": ["мясная","овощная","острая","сырная","мини-пицца"],
+  "pizza":[
+    {"name":"Пеперони","category":"мясная","image": "img/meat.jpg","coeficient":"1.3","ingredient":["мясо","сыр","томаты","лук","перец"],"size":["25","50"]},
+    {"name":"Овощная","category":"овощная","image": "img/meat.jpg","coeficient":"1.1","ingredient":["сыр","томаты","лук","перец"],"size":["25","35","50"]},
+    {"name":"Острая","category":"острая","image": "img/meat.jpg","coeficient":"1.2","ingredient":["мясо","сыр","томаты","перец"],"size":["25","35","50"]},
+    {"name":"Пеперони","category":"мясная","image": "img/meat.jpg","coeficient":"1.3","ingredient":["мясо","сыр","томаты","лук","перец"],"size":["35","50"]},
+    {"name":"Пеперони","category":"мясная","image": "img/meat.jpg","coeficient":"1.3","ingredient":["мясо","сыр","томаты","лук","перец"],"size":["25","35"]},
+    {"name":"Пеперони","category":"мясная","image": "img/meat.jpg","coeficient":"1.3","ingredient":["мясо","сыр","томаты","лук","перец"],"size":["25","50"]}
+  ]
 }

@@ -1,43 +1,6 @@
 (function() {
-	function putData() {
-		var number = functional.generateRandomNamber();
-		var currentObj = data.pizza[number];
 
-		var template = `<div class="product-card">
-				<div class="product-card__content ">
-						<div class="product-card__picter-box">
-								<img class="product-card__picter" src="${currentObj.picter}" alt="photo">
-						</div>
-						<div class="product-card__text">
-								<h3 class="product-card__head">${currentObj.name}</h3>
-								<p class="product-card__link">${currentObj.ingridients}</p>
-									<span class="hidden currentCoefficient">${currentObj.coefficient}</span>
-									<span class="hidden basicPrice">${data.basicPrice}</span>
-									<select class="selectSize">
-										<option>25</option>
-										<option>35</option>
-										<option>50</option>
-									</select>
-									<label for="cost">
-										<input class="currentCost" name="cost" disabled value="выберите размер"><span class="currency">byn<span>
-									</label>
-									<div class="product-card__icons-box">
-											<button class="product-card__buy">Купить</button>
-									</div>
-						</div>
-				</div>
-		</div>`;
-		functional.getCreateFragment(template, mainContent);
-	}
-
-	for (var i = 0; i < 10; i++) {
-		putData();
-		var selectSize = document.querySelectorAll('.selectSize');
-		var button = mainContent.querySelectorAll('.product-card__buy');
-
-		selectSize[i].addEventListener('change', functional.calculatioinCost);
-		button[i].addEventListener('click', functional.getPizzaToBasket);
-  }
+	
 
 // 	for (var i = 0; i < 10; i++) {
 // 	var node = document.querySelector('.main__content');

@@ -3,7 +3,6 @@
   var array = [1, 2, 3];
 
   var garmony =  function (numbers) {
-              alert('Среднегармоническое')
                 var reverseNumber = 0;
                 var sumNumber = 0;
                 for(var  i = 0; i < arguments.length; i++) {
@@ -18,7 +17,12 @@
                 console.log('Медиана')
                 var numberArray = Array.prototype.slice.call(arguments, 0);
                 numberArray.sort(function (a, b) {
-                  (a < b) ?  -1 : 1})
+                  if(a < b) {
+                    return -1
+                  } else {
+                    return 1
+                  }
+                })
 
                 if((numberArray.length - 1) % 2) {
                   var  medianaCart = (numberArray[numberArray.length / 2 - 1] + numberArray[numberArray.length / 2])/2 ;
@@ -64,25 +68,19 @@
 
 var polinom = function(x, array) {
                   console.log('Полином')
-                  var f = polinomСall(x, array) - 1;
-                  var  acum = 0;
-                  function polinomСall(x, array) {
-                            for(var i = 0; i < array.length; i++) {
-                              var currentArray = array;
-                              acum = acum + (Math.pow(currentArray[i], x) * (currentArray.length - i));
-                            }
-                              // if(array.length === 1) {
-                                  // return 1}
-                                 // else {
-                                    // return (Math.pow(currentArray, currentArray.length) * x + currentArray[1]) + polinomСall(x, currentArray.splice(0, currentArray.length - 1))
-                                  // }
-                              // }
-                            }
-                }
+                  polinomСall(x, array);
 
-  // garmony(5, 6, 7, 8, 90, 76, 55, 100)
-  // mediana(4, 3, 2, 6, 1)
-  // dispersia(17, 15, 23, 7, 9, 13)
-  // stringGetFunction('Привет Мир !')
+                  function polinomСall(x, array) {
+                              if(array.length === 1) { return }
+                                 else {
+                                  return  (Math.pow(array, array.length) * x + array[1]) + polinomСall(x, array.splice(0, array.length - 1))
+                                  }
+                              }
+                            }
+
+  garmony(5, 6, 7, 8, 90, 76, 55, 100)
+  mediana(4, 3, 8, 6, 1)
+  dispersia(17, 15, 23, 7, 9, 13)
+  stringGetFunction('Привет Мир !')
   console.log('Полином: ' + polinom(2, array))
 })()
