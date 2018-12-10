@@ -71,7 +71,7 @@ var bookkeeping = {
                   }
                 });
 
-                arrayCurrent.forEach(function( item, i, arrayCurrent) {
+                arrayCurrent.forEach(function(item, i, arrayCurrent) {
                   console.log('Имя: ' + item.name + ' зарплата: ' + item.salary + ' рублей');
                 });
 

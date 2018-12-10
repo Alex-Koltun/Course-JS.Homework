@@ -6,21 +6,20 @@ var functional = {
   },
   url:'../js/data.json',
   templates:{
-    basketTemplate: `
-      <div class="main-item">
+    basketTemplate: `<div class="main-item">
         <img class="pizza-image" src="" alt="pizza">
         <label for="size">
           <span>Размер</span>
-          <input class="main-item__input" value="" name="size"></input>
+          <input class="main-item__input size"  value="" name="size"></input>
           <span>см</span>
         </label>
         <label for="cost">
           <span>Цена</span>
-          <input class="main-item__input" value="" name="cost"></input>
+          <input class="main-item__input cost" value="" name="cost"></input>
           <span>BYN</span>
         </label>
       </div>`,
-      productCardTemplate: `<div class="product-card">
+    productCardTemplate: `<div class="product-card">
   				<div class="product-card__content ">
   						<div class="product-card__picter-box">
   								<img class="product-card__picter" src="" alt="photo">
@@ -30,13 +29,13 @@ var functional = {
   								<p class="product-card__link"></p>
   									<span class="hidden currentCoefficient"></span>
   									<span class="hidden basicPrice"></span>
-  									<select class="selectSize">
-  										<option>25</option>
+  									<select class="selectSize" value="25">
+  										<option selected>25</option>
   										<option>35</option>
   										<option>50</option>
   									</select>
   									<label for="cost">
-  										<input class="currentCost" name="cost" disabled value="выберите размер"><span class="currency">byn<span>
+  										<input class="currentCost" name="cost" disabled value=""><span class="currency">byn<span>
   									</label>
   									<div class="product-card__icons-box">
   											<button class="product-card__buy">Купить</button>
@@ -48,6 +47,7 @@ var functional = {
   getCreateFragment: function(template, fatherNode) {
     var range = document.createRange();
     var fragment = range.createContextualFragment(template);
+
     fatherNode.appendChild(fragment);
   },
   putData:  function() {
@@ -64,6 +64,9 @@ var functional = {
                 hidden.classList.add('hidden');
             }
   },
+  calculation: function(basicPrice = 25, coefficientPizza, coefficientSize){
+      return Math.round(basicPrice * coefficientPizza * coefficientSize)
+  },
   calculatioinCost: function(event) {
     var basicPrice = 20;
     var coefficientPizza = +event.path[2].querySelector('.currentCoefficient').innerText;
@@ -72,10 +75,11 @@ var functional = {
     var currentCost =  event.path[2].querySelector('.currentCost');
     var coefficientSize = currentSize/25;
 
-    function calculation (basicPrice = 25, coefficientPizza, coefficientSize) {
-                                  return Math.round(basicPrice * coefficientPizza * coefficientSize)
-                          };
-    currentCost.setAttribute('value', calculation(basicPrice, coefficientPizza, coefficientSize))
+    currentCost.setAttribute('value', functional.calculation(basicPrice, coefficientPizza, coefficientSize))
+  },
+  calculatioinCostOnLoad: function(currentNode,currentSize, basicPrice, coefficientPizza) {
+    var coefficientSize = currentSize/25;
+    currentNode.setAttribute('value', functional.calculation(basicPrice, coefficientPizza, coefficientSize))
   },
   putToBasket: function() {
       console.log(basicPrice)
@@ -87,46 +91,46 @@ var functional = {
     var cost = event.path[2].querySelector('.currentCost').getAttribute(`value`);
     var image = event.path[3].querySelector('img').getAttribute(`src`);
 
-    functional.getCreateFragment(functional.basketTemplate, basketContent)
+    functional.getCreateFragment(functional.templates.basketTemplate, basketContent);
+    document.querySelector('.main-item .pizza-image').src =  image;
+    document.querySelector('.size').setAttribute('value', currentSize);
+    document.querySelector('.cost').setAttribute('value', cost);
   },
   helloWorld: function(){
     alert(`Hello`)
   },
-  data: {function (onLoad, onError) {
-      var xhr = new XMLHttpRequest();
-      xhr.responseType = 'json';
+  data: function(method, currentData) {
+    var xhr = new XMLHttpRequest();
 
-      xhr.addEventListener('load', function () {
-        if (xhr.status === 200) {
-          onLoad(xhr.response);
-        }
-        else {
-          onError(xhr.response);
-        }
-      });
-      xhr.addEventListener('error', function () {
-        onError('Произошла ошибка соединения');
-      });
-      xhr.addEventListener('timeout', function () {
-        onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
-      });
+    xhr.open('GET', 'data.json', false);
+    xhr.send();
+    if (xhr.status != 200) {
+    alert( xhr.status + ': ' + xhr.statusText );
+    } else {
+       var currentData = JSON.parse(xhr.responseText);
+       for (var i = 0; i < currentData.pizza.length; i++) {
+          if(i / 10 >= 1) {
+            alert("Привет!")
+          }
+           functional.putData();
 
-      xhr.timeout = 1000;
-      return xhr;
-    },
-  backend: {
-    save: function (data, onLoad, onError) {
-      var request = setupXhrRequest(onLoad, onError);
+           var imagePizza = document.querySelectorAll('.product-card__picter');
+           var namePizza  = document.querySelectorAll('.product-card__head');
+           var basicPrice = document.querySelectorAll('.basicPrice');
+           var currentCoefficient = document.querySelectorAll('.currentCoefficient');
+           var selectSize = document.querySelectorAll('.selectSize');
+           var button = mainContent.querySelectorAll('.product-card__buy');
+           var currentCost = document.querySelectorAll('.currentCost');
 
-      request.open('POST', );
-      request.send(data);s
-    },
-    load: function (onLoad, onError) {
-      var request = setupXhrRequest(onLoad, onError);
+           namePizza[i].innerText = currentData.pizza[i].name;
+           imagePizza[i].src = currentData.pizza[i].image;
+           currentCoefficient[i].innerText = currentData.pizza[i].coeficient;
+           basicPrice.innerText = currentData.basicPrice;
 
-      request.open('GET', SERVER_URL + '/data');
-      request.send();
-    }
-  }
+           functional.calculatioinCostOnLoad(currentCost[i], currentData.basicPrice, currentData.pizza[i].size[0], currentData.pizza[i].coeficient)
+           selectSize[i].addEventListener('change', functional.calculatioinCost);
+           button[i].addEventListener('click', functional.getPizzaToBasket);
+         }
+     }
   }
 }

@@ -1,6 +1,6 @@
 (function() {
 
-	
+
 
 // 	for (var i = 0; i < 10; i++) {
 // 	var node = document.querySelector('.main__content');
