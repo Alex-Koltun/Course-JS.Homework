@@ -21,22 +21,9 @@
         <h3 class="basket-box__header">Корзина</h3>
         <form class="basket-form">
             <div class="main-form">
-              <!-- <div class="main-item">
-                <img class="pizza-image" src="" alt="pizza">
-                <label for="size">
-                  <span>Размер</span>
-                  <input class="main-item__input" value="25" name="size"></input>
-                  <span>см</span>
-                </label>
-                <label for="cost">
-                  <span>Цена</span>
-                  <input class="main-item__input" value="30" name="cost"></input>
-                  <span>BYN</span>
-                </label>
-              </div> -->
           </div>
           <div class="basket-form__total">
-            <p><span>100</span><span>BYN</span><p>
+            <p><span class="totalCost"></span><span>BYN</span><p>
           </div>
           <button class="basket-form__button">Покупаю!</button>
         </form>
@@ -47,272 +34,39 @@
         <img src="img/filter .png" alt="filtуr">
       </div>
         <div class="controll-panel__filtre-box hidden">
-          <select class="serlect category">
+          <select class="select categoryPizza">
             <option>любая</option>
-            <option>мясная</option>
+            <!-- <option>мясная</option>
             <option>овощная</option>
-            <option>студенческая</option>
+            <option>студенческая</option> -->
           </select>
           <!-- <select class="select cost">
             <option>цена</option>
           </select> -->
           <select class="select size">
             <option>любой</option>
-            <option>25</option>
+            <!-- <option>25</option>
             <option>35</option>
-            <option>50</option>
+            <option>50</option> -->
           </select>
+
+          <button  class="search-button">Искать</button>
         </div>
     </section>
     <main class="main">
       <h2 class="main__top-text">Best<span class="main__text-color">pizza</span> for you!</h2>
-      <div class="main__content">
-
-          <!-- <div class="product-card" id="meat">
-              <div class="product-card__content ">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"></li>
-                          <li class="product-card__link-item"></li>
-                          <li class="product-card__link-item"></li>
-                          <li class="product-card__link-item"></li>
-                          <li class="product-card__link-item"></li>
-                          <li class="product-card__link-item"></li>
-                      </ul>
-                        <span class="hidden currentCoefficient">1.1</span>
-                        <span class="hidden basicPrice">20</span>
-                        <select class="selectSize" value="Выберите размер">
-                          <option>25</option>
-                          <option>35</option>
-                          <option>50</option>
-                        </select>
-                        <label for="cost">
-                          <input class="currentCost" name="cost" disabled value="20"><span class="currency">byn<span>
-                        </label>
-                        <div class="product-card__icons-box">
-                            <button class="product-card__buy">Купить</button>
-                        </div>
-                  </div>
-              </div>
-          </div> -->
-
-          <!-- <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="product-card">
-              <div class="product-card__content">
-                  <div class="product-card__picter-box">
-                      <img class="product-card__picter" src="" alt="photo">
-                  </div>
-                  <div class="product-card__text">
-                      <h3 class="product-card__head"></h3>
-                      <ul class="product-card__link">
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                          <li class="product-card__link-item"><a href="#"></a> </li>
-                          <li class="product-card__link-item"><a href="#"></a></li>
-                      </ul>
-                      <div class="product-card__icons-box">
-                          <button class="product-card__buy">Купить</button>
-                      </div>
-                  </div>
-              </div>
-          </div>  -->
-
-      </div>
+      <div class="pagination-box"></div>
+      <section class="main__content">
+        <!-- <div class="content-item-1">
+        </div> -->
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__content">
         <span>Я футер</span>
       </div>
     </footer>
-    <!-- <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script> -->
-    <!-- <script src="js/data.js"></script> -->
-    <!-- <script src="js/productCard.js"></script> -->
     <script src="js/index.js"></script>
-    <script src="js/searchNode.js"></script>
-    <script src="js/collector.js"></script>
+    <script defer src="js/collector.js"></script>
   </body>
 </html>

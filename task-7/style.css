@@ -1,0 +1,70 @@
+body {
+  min-height: 100vh;
+}
+
+.main {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;"
+}
+.timer {
+  font-size: 5rem;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  color: #CDDC39;
+  background: indianred;
+}
+
+.tabl {
+  display: flex;
+}
+
+.myStyle,
+.myStyle--row  {
+  width: 10%;
+  height: 20px;
+  text-align: center;
+  }
+  .myStyle {
+     background-color: #ff000017;
+     border: 1px black solid;
+  }
+
+  /* .myStyle:first-child {
+    background: blue;
+  } */
+
+  .tabl:first-child{
+    background-color: blue;
+  }
+
+.myStyle--row {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid red;
+  /* border-left: 0; */
+  padding-top: 5px;
+}
+
+.countries {
+  width: 100%;
+}
+.countries ul {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.countries ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+}
+.countries ul li img {
+  border: 10px solid green
+}
+
+.hidden {
+  display: none;
+}
